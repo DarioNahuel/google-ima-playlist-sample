@@ -42,6 +42,13 @@ Ads.prototype.initialUserAction = function() {
 };
 
 Ads.prototype.requestAds = function(adTagUrl) {
+
+  this.adsLoader_.contentComplete();
+  
+  if (this.adsManager_) {
+    this.adsManager_.destroy();
+  }
+  
   this.contentCompleteCalled = false;
   this.allAdsCompleted = false;
   var adsRequest = new google.ima.AdsRequest();
