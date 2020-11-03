@@ -42,12 +42,19 @@ Ads.prototype.initialUserAction = function() {
 };
 
 Ads.prototype.requestAds = function(adTagUrl) {
-
+  // Monkey patch
   this.adsLoader_.contentComplete();
   
   if (this.adsManager_) {
     this.adsManager_.destroy();
+    this.adsManager_ = null;
   }
+
+  if (this.adsLoader_) {
+    this.adsLoader_.destroy();
+    this.adsLoader_ = null;
+  }
+  // End monkey patch
   
   this.contentCompleteCalled = false;
   this.allAdsCompleted = false;
