@@ -49,11 +49,6 @@ Ads.prototype.requestAds = function(adTagUrl) {
     this.adsManager_.destroy();
     this.adsManager_ = null;
   }
-
-  if (this.adsLoader_) {
-    this.adsLoader_.destroy();
-    this.adsLoader_ = null;
-  }
   // End monkey patch
   
   this.contentCompleteCalled = false;
