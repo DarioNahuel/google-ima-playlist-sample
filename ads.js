@@ -54,7 +54,7 @@ Ads.prototype.requestAds = function(adTagUrl) {
   this.contentCompleteCalled = false;
   this.allAdsCompleted = false;
   var adsRequest = new google.ima.AdsRequest();
-  adsRequest.adTagUrl = adTagUrl;
+  adsRequest.adTagUrl = adTagUrl + '&scor=1111';
   console.log('ad tag url', adTagUrl);
   adsRequest.linearAdSlotWidth = this.videoPlayer_.width;
   adsRequest.linearAdSlotHeight = this.videoPlayer_.height;
